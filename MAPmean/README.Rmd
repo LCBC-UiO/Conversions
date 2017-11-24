@@ -21,8 +21,8 @@ Returns the entire data frame that was provided, with the addition of the MAPmea
 ## Invoking function 
 
 ```{r warning=F, message=F}
-source("Calc_MapMean.R")                 # Makes the function wasi.conversion() available
-load("Sample.rda")
+source("Calc_MapMean.R")                # Makes the function Calc_MapMean.R() available
+load("Sample.rda")                      # Load some sample data to test
 
 Calc_MapMean(Sample)
 ```
