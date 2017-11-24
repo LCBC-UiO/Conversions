@@ -5,9 +5,12 @@ It requires both tidyverse and readxl packages to run. Given an array of t-score
 You must select the type of FS IQ to calculate, either with 2 or 4 subtests (default set to 2).
 
 ## Input:
-IN:       array of T-scores data 
 
-Table:    conversion table:
+**IN  =  array of T-scores data**
+sums of t-scores you want to use for the conversion. For two subtests, the sum of two t-scores, sums of four for four subtests.
+
+
+**Table = conversion table**
 
 | Sheet Name | IQ Equivalents of Sums of T scores | Page reference|WASI manual year |
 |:----|----|----|----:|
