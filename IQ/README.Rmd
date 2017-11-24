@@ -1,6 +1,4 @@
----
-title: "Convert WAIS t-scores to IQ scores"
----
+# Convert WASI t-scores to IQ scores
 
 This script converts t-scores from WASI-I to Fullscale IQ (FSIQ). The table is proprietary and may not be distributed outside of LCBC.
 It requires both tidyverse and readxl packages to run. Given an array of t-scores, it will provide an array of equal size back with IQ scores.
@@ -17,7 +15,7 @@ array with converted IQ scores. Wrong data is denoted with a "-1"
 
 
 
-# Invoking function 
+## Invoking function 
 input here your T-scores arrays and your desired conversion table##
 
 ```{r warning=F, message=F}
