@@ -10,9 +10,6 @@ wasi.conversion = function(IN, nSubtests=2) {
     ifelse(. < min(wasi.tb[,1]) | . > max(wasi.tb[-length(wasi.tb[,1]),1]), 
            999, .) 
   
-  #Index the t-scores to the wasi table
-  inds = match(Int, wasi.tb[,1])
-  
   #Get the values from the wasi table at the extrected indeces
   OUT = wasi.tb[match(Int, wasi.tb[,1]),2]
   
