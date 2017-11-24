@@ -1,6 +1,10 @@
 # Calculating Mean Arterial Pressure
 
-This scripts requires the existance of measurements of diastolic and systolic blood pressure, and calculates the Mean Arterial Pressire (MAPmean).
+This scripts requires the existance of measurements of diastolic and systolic blood pressure, and calculates the Mean Arterial Pressure (MAPmean).
+
+This script uses the following calculation for MAP mean
+
+$$ MAP = \simeq \frac{(2 \times DP) + SP}{3} $$
 
 ## Input:
 
