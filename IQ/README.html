@@ -124,7 +124,38 @@ $(document).ready(function () {
 <p>This script converts t-scores from WASI-I to Fullscale IQ (FSIQ). The table is proprietary and may not be distributed outside of LCBC. It requires both tidyverse and readxl packages to run. Given an array of t-scores, it will provide an array of equal size back with IQ scores. You must select the type of FS IQ to calculate, either with 2 or 4 subtests (default set to 2).</p>
 <div id="input" class="section level2">
 <h2>Input:</h2>
-<p>IN: array of T-scores data Table: conversion table: WASI.Full.2tests –&gt; IQ Equivalents of Sums of T scores: Full Scale-2 subtests (pp. 192-193, WASI manual 1999) WASI.Full.4tests –&gt; IQ Equivalents of Sums of T scores: Full Scale-4 subtests (pp. 188-191, WASI manual 1999)</p>
+<p>IN: array of T-scores data</p>
+<table style="width:31%;">
+<caption>conversion table:</caption>
+<colgroup>
+<col width="8%"></col>
+<col width="6%"></col>
+<col width="6%"></col>
+<col width="8%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Sheet Name</th>
+<th>IQ Equivalents of Sums of T scores</th>
+<th>Page reference</th>
+<th align="right">WASI manual year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">WASI.Full.2tests</td>
+<td>Full Scale - 2 subtests</td>
+<td>192-193</td>
+<td align="right">1999</td>
+</tr>
+<tr class="even">
+<td align="left">WASI.Full.4tests</td>
+<td>Full Scale - 4 subtests</td>
+<td>188-19</td>
+<td align="right">1999</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="output" class="section level2">
 <h2>Output:</h2>

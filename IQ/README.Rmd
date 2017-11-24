@@ -6,9 +6,13 @@ You must select the type of FS IQ to calculate, either with 2 or 4 subtests (def
 
 ## Input:
 IN:       array of T-scores data 
+
 Table:    conversion table:
-    WASI.Full.2tests --> IQ Equivalents of Sums of T scores: Full Scale-2 subtests (pp. 192-193, WASI manual 1999)
-    WASI.Full.4tests --> IQ Equivalents of Sums of T scores: Full Scale-4 subtests (pp. 188-191, WASI manual 1999)
+
+| Sheet Name | IQ Equivalents of Sums of T scores | Page reference|WASI manual year |
+|:----|----|----|----:|
+| WASI.Full.2tests | Full Scale - 2 subtests | 192-193 | 1999 |
+| WASI.Full.4tests | Full Scale - 4 subtests | 188-19 | 1999 |
 
 ## Output: 
 array with converted IQ scores. Wrong data is denoted with a "-1"
