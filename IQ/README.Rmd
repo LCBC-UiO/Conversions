@@ -1,0 +1,29 @@
+---
+title: "Convert WAIS t-scores to IQ scores"
+---
+
+This script converts t-scores from WASI-I to Fullscale IQ (FSIQ). The table is proprietary and may not be distributed outside of LCBC.
+It requires both tidyverse and readxl packages to run. Given an array of t-scores, it will provide an array of equal size back with IQ scores.
+You must select the type of FS IQ to calculate, either with 2 or 4 subtests (default set to 2).
+
+## Input:
+IN:       array of T-scores data 
+Table:    conversion table:
+    WASI.Full.2tests --> IQ Equivalents of Sums of T scores: Full Scale-2 subtests (pp. 192-193, WASI manual 1999)
+    WASI.Full.4tests --> IQ Equivalents of Sums of T scores: Full Scale-4 subtests (pp. 188-191, WASI manual 1999)
+
+## Output: 
+array with converted IQ scores. Wrong data is denoted with a "-1"
+
+
+
+# Invoking function 
+input here your T-scores arrays and your desired conversion table##
+
+```{r warning=F, message=F}
+source("IQ_conversion.R")                 # Makes the function wasi.conversion() available
+Tscores = c(35,100,82,130, 180, 111)      # array with t-scores
+tb <- 4                                   # 2 or 4
+
+wasi.conversion(IN=Tscores, nSubtests=tb)
+```
