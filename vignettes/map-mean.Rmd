@@ -1,4 +1,20 @@
-# Calculating Mean Arterial Pressure
+---
+title: "Calculating Mean Arterial Pressure"
+author: "Athanasia Monika Mowinckel"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
 
 This scripts requires the existance of measurements of diastolic and systolic blood pressure, and calculates the Mean Arterial Pressure (MAPmean).
 
@@ -24,9 +40,7 @@ Returns the entire data frame that was provided, with the addition of the MAPmea
 
 ## Invoking function 
 
-```{r warning=F, message=F}
-source("Calc_MapMean.R")                # Makes the function Calc_MapMean.R() available
-load("Sample.rda")                      # Load some sample data to test
+```{r warning=F, message=F, eval=FALSE}
 
-Calc_MapMean(Sample)
+Calc_MapMean(data)
 ```

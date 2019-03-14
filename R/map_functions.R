@@ -1,11 +1,16 @@
+#' Calculate mean arterial pressure
+#' 
+#' @param DATA data frame containing necessary columns
+#'
+#' @importFrom dplyr group_by mutate select contains
+#' @importFrom magrittr '%>%'
 Calc_MapMean = function(DATA){
-  require(tidyverse)
   # Compute blood pressure composite measure (MAP mean)
   
   #Calculate means for the two times blood pressure was taken
   DATA = DATA %>% 
-    group_by(CrossProject_ID, Subject_Timepoint) %>% 
-    mutate(DELETE1=mean(c(BloodPress_Diastolic_1,BloodPress_Diastolic_2), na.rm=T),
+    dplyr::group_by(CrossProject_ID, Subject_Timepoint) %>% 
+    dplyr::mutate(DELETE1=mean(c(BloodPress_Diastolic_1,BloodPress_Diastolic_2), na.rm=T),
            DELETE2=mean(c(BloodPress_Systolic_1,BloodPress_Systolic_2), na.rm=T)) %>% 
     as.data.frame()
   
@@ -21,8 +26,16 @@ Calc_MapMean = function(DATA){
   
   #Delete uncecessary columns, and calculate the MAP mean
   DATA = DATA %>% 
-    select(-contains("DELETE")) %>%
-    mutate(BloodPress_MapMean = ((DATA$BloodPress_Diastolic_Mean*2)+DATA$BloodPress_Systolic_Mean)/3)
+    dplyr::select(-dplyr::contains("DELETE")) %>%
+    dplyr::mutate(BloodPress_MapMean = ((DATA$BloodPress_Diastolic_Mean*2)+DATA$BloodPress_Systolic_Mean)/3)
   
   return(DATA)
 }
+
+
+
+if(getRversion() >= "2.15.1")  utils::globalVariables(c("BloodPress_Diastolic_Mean", "BloodPress_Systolic_Mean",
+                                                        "BloodPress_MapMean", 
+                                                        "BloodPress_Systolic_1", "BloodPress_Systolic_2",
+                                                        "BloodPress_Diastolic_1","BloodPress_Diastolic_2",
+                                                        "CrossProject_ID", "Subject_Timepoint"))

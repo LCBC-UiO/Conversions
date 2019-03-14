@@ -1,4 +1,21 @@
-# Convert WASI t-scores to IQ scores
+---
+title: "Convert WASI t-scores to IQ scores"
+author: "Didac Vidal Pineiro"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
 
 This script converts t-scores from WASI-I to Fullscale IQ (FSIQ). The table is proprietary and may not be distributed outside of LCBC.
 It requires both tidyverse and readxl packages to run. Given an array of t-scores, it will provide an array of equal size back with IQ scores.
@@ -25,7 +42,7 @@ array with converted IQ scores. Wrong data is denoted with a "-1"
 ## Invoking function 
 input here your T-scores arrays and your desired conversion table##
 
-```{r warning=F, message=F}
+```{r warning=F, message=F, eval=F}
 source("IQ_conversion.R")                 # Makes the function wasi.conversion() available
 Tscores = c(35,100,82,130, 180, 111)      # array with t-scores
 tb <- 4                                   # 2 or 4

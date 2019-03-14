@@ -1,0 +1,29 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# LCBC Conversions <img src="man/figures/hex.png" align="right" alt="" width="120" />
+
+
+The repository contains functions to run coversions on certain raw data in the database of LCBC.
+
+The conversions covered so far:  
+
+- IQ measures - conversions from raw to T, scaled and fullscale IQ scores  
+- MAP mean - blood pressure conversion  
+
+Thee functions are not properly cleaned and optimised yet. They are remnants of old scripts.
+There are no unit tests.
+
+Vignettes are written, but are old and do not explain the functions well, just the general consept.
+
