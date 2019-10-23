@@ -9,3 +9,4 @@
 ^codecov\.yml$
 ^\.circleci$
 ^\.circleci/config\.yml$
+^appveyor\.yml$

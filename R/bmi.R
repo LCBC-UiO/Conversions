@@ -18,13 +18,11 @@ calc_bmi <- function(height, weight){
 }
 
 #' Calculate BMI
-#' 
-#' function to calculate the BMI
-#' with the non-standard formulae: 
-#' \eqn{BMI = weight / (height/100)^2.5 }
-#' which is suggested to provide a measurement that
+#'
+#' function to calculate the BMI with the non-standard formulae: \eqn{BMI =
+#' weight / (height/100)^(2.5) } which is suggested to provide a measurement that
 #' it less dependent on height.
-#' 
+#'
 #' @inheritParams calc_bmi
 #'
 #' @return numeric vector of BMI

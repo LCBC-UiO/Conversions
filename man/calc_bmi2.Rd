@@ -15,10 +15,8 @@ calc_bmi2(height, weight)
 numeric vector of BMI
 }
 \description{
-function to calculate the BMI
-with the non-standard formulae: 
-\eqn{BMI = weight / (height/100)^2.5 }
-which is suggested to provide a measurement that
+function to calculate the BMI with the non-standard formulae: \eqn{BMI =
+weight / (height/100)^(2.5) } which is suggested to provide a measurement that
 it less dependent on height.
 }
 \examples{
