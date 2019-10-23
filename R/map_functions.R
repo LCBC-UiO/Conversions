@@ -4,7 +4,7 @@
 #'
 #' @importFrom dplyr group_by mutate select contains
 #' @importFrom magrittr '%>%'
-Calc_MapMean = function(DATA){
+calc_map_mean = function(DATA){
   # Compute blood pressure composite measure (MAP mean)
   
   #Calculate means for the two times blood pressure was taken

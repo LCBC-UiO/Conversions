@@ -13,7 +13,12 @@ knitr::opts_chunk$set(
 )
 ```
 # LCBC Conversions <img src="man/figures/hex.png" align="right" alt="" width="120" />
-
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.org/LCBC-UiO/Conversions.svg?branch=master)](https://travis-ci.org/LCBC-UiO/Conversions)
+[![Codecov test coverage](https://codecov.io/gh/LCBC-UiO/Conversions/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/Conversions?branch=master)
+[![CRAN status](https://www.r-pkg.org/badges/version/Conversions)](https://CRAN.R-project.org/package=Conversions)
+<!-- badges: end -->
 
 The repository contains functions to run coversions on certain raw data in the database of LCBC.
 
