@@ -52,7 +52,7 @@ convert_rawIQ = function(data, type = "T", battery = "WASI", subtest = "Vocab",
     dplyr::mutate(NEW = purrr::map(NEW, ~names(.)[which.min(.[.>=0])])) %>% 
     dplyr::mutate(NEW = purrr::map(NEW, ~ifelse(is_empty(.), NA, .))) %>% 
     tidyr::unnest() %>% 
-    rename_("OLD" = type) %>% 
+    dplyr::rename(OLD = type) %>% 
     dplyr::mutate(NEW = ifelse(is.na(NEW), OLD, NEW))
   
   # For easier working, copy the data
@@ -81,8 +81,7 @@ wasi.conversion = function(IN, wasi.tb) {
 }
 
 
-if(getRversion() >= "2.15.1")  utils::globalVariables(c("Subtest", "Age",
-                                                        "BloodPress_MapMean", 
+if(getRversion() >= "2.15.1")  utils::globalVariables(c("Subtest", "Age","BloodPress_MapMean", 
                                                         "DEC", "ROW",
                                                         "RAW","NEW",
                                                         "OLD", "."))
