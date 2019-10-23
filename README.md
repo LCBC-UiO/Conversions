@@ -29,3 +29,17 @@ remnants of old scripts. There are no unit tests.
 
 Vignettes are written, but are old and do not explain the functions
 well, just the general consept.
+
+## Installation
+
+the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("LCBC-UiO/Conversions")
+```
+
+## Documentation
+
+package documentation can be found
+[here](https://lcbc-uio.github.io/Conversions/)
