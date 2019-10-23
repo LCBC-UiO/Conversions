@@ -42,5 +42,5 @@ Returns the entire data frame that was provided, with the addition of the MAPmea
 
 ```{r warning=F, message=F, eval=FALSE}
 
-Calc_MapMean(data)
+calc_map_mean(data)
 ```
