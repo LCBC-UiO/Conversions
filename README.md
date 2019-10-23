@@ -13,6 +13,8 @@ status](https://travis-ci.org/LCBC-UiO/Conversions.svg?branch=master)](https://t
 coverage](https://codecov.io/gh/LCBC-UiO/Conversions/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/Conversions?branch=master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/Conversions)](https://CRAN.R-project.org/package=Conversions)
+[![CircleCI build
+status](https://circleci.com/gh/LCBC-UiO/Conversions.svg?style=svg)](https://circleci.com/gh/LCBC-UiO/Conversions)
 <!-- badges: end -->
 
 The repository contains functions to run coversions on certain raw data
