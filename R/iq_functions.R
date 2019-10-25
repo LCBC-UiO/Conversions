@@ -69,14 +69,19 @@ convert_rawIQ = function(data, type = "T", battery = "WASI", subtest = "Vocab",
 }
 
 
-wasi.conversion = function(IN, wasi.tb) {
+iq_conversion = function(x, conversion_table) {
   
-  #set t-values outside allowed range to 999
-  Int = ifelse(IN < min(wasi.tb[,1]) | IN > max(wasi.tb[-length(wasi.tb[,1]),1]), 
+  # set t-values outside allowed range to 999
+  x = ifelse(x < min(conversion_table[,1]) | x > max(conversion_table[-length(conversion_table[,1]),1]), 
                999, .) 
   
-  #Get the values from the wasi table at the extrected indeces
-  wasi.tb[match(Int, wasi.tb[,1]),2]
+  if(any(x == 999)){
+    warning("Some values are outside the allowed range. Row number(s):\t")
+    cat(which(x == 999))
+  }
+  
+  #Get the values from the wasi table at the extracted indeces
+  conversion_table[match(x, conversion_table[,1]),2]
 }
 
 

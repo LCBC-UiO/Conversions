@@ -24,5 +24,7 @@ BIDS-type reference for a specific
 set of data.
 }
 \examples{
-
+bidsify(1100300, 2)
+bidsify(1100300, 2, "ousAvanto")
+bidsify(1100300, 2, "ousAvanto", type = "folder")
 }

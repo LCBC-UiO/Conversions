@@ -16,31 +16,12 @@ knitr::opts_chunk$set(
 )
 ```
 
-This scripts requires the existance of measurements of diastolic and systolic blood pressure, and calculates the Mean Arterial Pressure (MAPmean).
+There are two functions for blood pressure in this package.
+One for calculating the mean of the bloodspressure measurement, since we measure it several times.
+And the other to calulcate the mean arterial pressure (MAP).
 
-This script uses the following calculation for MAP mean
+MAP is calculated with the following formulae:
 
-$$ MAP = \simeq \frac{(2 \times DP) + SP}{3} $$
-
-## Input:
-
-**IN  =  data frame**
-A dataframe including the following columns (MOAS columns): 
-
- - CrossProject_ID
- - Subject_Timepoint
- - BloodPress_Diastolic_1
- - BloodPress_Diastolic_2
- - BloodPress_Systolic_1
- - BloodPress_Systolic_2
-
-## Output: 
-Returns the entire data frame that was provided, with the addition of the MAPmean column
+$$ MAP \simeq \frac{(2 \times diastolic) + systolic}{3} $$
 
 
-## Invoking function 
-
-```{r warning=F, message=F, eval=FALSE}
-
-calc_map_mean(data)
-```

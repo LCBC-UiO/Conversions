@@ -14,7 +14,9 @@
 #' @export
 #'
 #' @examples
-#' 
+#' bidsify(1100300, 2)
+#' bidsify(1100300, 2, "ousAvanto")
+#' bidsify(1100300, 2, "ousAvanto", type = "folder")
 bidsify <- function(ID, session, site=NULL, type="file"){
   
   seep <- switch(type,
