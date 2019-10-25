@@ -56,3 +56,24 @@ test_that("iq_wppsi_adjust works", {
   expect_equal(nrow(dt2), nrow(dt))
   expect_equal(dt2$viq, c(33, 38, 57))
 })
+
+test_that("iq_wppsi_fs works", {
+  expect_equal(iq_wppsi_fs(10, 10), 10)
+  expect_equal(iq_wppsi_fs(30, 20), 25)
+})
+
+test_that("iq_t2iq works", {
+  expect_error(iq_t2iq(), "conversion_table")
+})
+
+
+test_that("convert_t2iq works", {
+  t <- data.frame(from = c(10,20,30),
+                  to = c(40, 50, 60))
+  expect_equal(convert_t2iq(c(10,30), t),
+               c(40,60))
+  
+  tt <- expect_warning(convert_t2iq(c(10,30, 70), t),
+                 "outside the allowed")
+  expect_equal(tt, c(40,60,NA))
+})

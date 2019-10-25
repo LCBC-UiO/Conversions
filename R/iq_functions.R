@@ -132,7 +132,9 @@ iq_get <- function(x, age, iq_table){
 #' @param data data.frame 
 #' @param cols columns in the data frame with necessary
 #' data
-#' @param conversion_table table with conversion
+#' @param conversion_table table with conversion, first column
+#' being the score to convert from, second score to 
+#' convert to
 #'
 #' @return numeric vector of IQ scores
 #' @export
@@ -158,16 +160,15 @@ iq_t2iq <- function(data,
 }
 
 
-
 convert_t2iq = function(x, conversion_table) {
   
   # set t-values outside allowed range to 999
-  x = ifelse(x < min(conversion_table[,1]) | x > max(conversion_table[-length(conversion_table[,1]),1]), 
-             999, .) 
+  x = ifelse(x < min(conversion_table[,1]) | x > max(conversion_table[,1]), 
+             999, x) 
   
   if(any(x == 999)){
-    warning("Some values are outside the allowed range. Row number(s):\t")
-    cat(which(x == 999))
+    rr <- paste(which(x == 999), collapse=", ")
+    warning(paste0("Some values are outside the allowed range. Row number(s):\t", rr))
   }
   
   # Get the values from the wasi table at the extracted indeces
