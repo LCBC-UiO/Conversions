@@ -95,7 +95,7 @@
       <h1>Calculating Mean Arterial Pressure</h1>
                         <h4 class="author">Athanasia Monika Mowinckel</h4>
             
-            <h4 class="date">2019-10-24</h4>
+            <h4 class="date">2019-10-25</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/LCBC-UiO/Conversions/blob/master/vignettes/map-mean.Rmd"><code>vignettes/map-mean.Rmd</code></a></small>
       <div class="hidden name"><code>map-mean.Rmd</code></div>
@@ -104,46 +104,13 @@
 
     
     
-<p>This scripts requires the existance of measurements of diastolic and systolic blood pressure, and calculates the Mean Arterial Pressure (MAPmean).</p>
-<p>This script uses the following calculation for MAP mean</p>
-<p><span class="math display">\[ MAP = \simeq \frac{(2 \times DP) + SP}{3} \]</span></p>
-<div id="input" class="section level2">
-<h2 class="hasAnchor">
-<a href="#input" class="anchor"></a>Input:</h2>
-<p><strong>IN = data frame</strong> A dataframe including the following columns (MOAS columns):</p>
-<ul>
-<li>CrossProject_ID</li>
-<li>Subject_Timepoint</li>
-<li>BloodPress_Diastolic_1</li>
-<li>BloodPress_Diastolic_2</li>
-<li>BloodPress_Systolic_1</li>
-<li>BloodPress_Systolic_2</li>
-</ul>
-</div>
-<div id="output" class="section level2">
-<h2 class="hasAnchor">
-<a href="#output" class="anchor"></a>Output:</h2>
-<p>Returns the entire data frame that was provided, with the addition of the MAPmean column</p>
-</div>
-<div id="invoking-function" class="section level2">
-<h2 class="hasAnchor">
-<a href="#invoking-function" class="anchor"></a>Invoking function</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="../reference/calc_map_mean.html">calc_map_mean</a></span>(data)</a></code></pre></div>
-</div>
+<p>There are two functions for blood pressure in this package. One for calculating the mean of the bloodspressure measurement, since we measure it several times. And the other to calulcate the mean arterial pressure (MAP).</p>
+<p>MAP is calculated with the following formulae:</p>
+<p><span class="math display">\[ MAP \simeq \frac{(2 \times diastolic) + systolic}{3} \]</span></p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#input">Input:</a></li>
-      <li><a href="#output">Output:</a></li>
-      <li><a href="#invoking-function">Invoking function</a></li>
-      </ul>
-</div>
       </div>
 
 </div>
