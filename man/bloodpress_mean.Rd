@@ -33,3 +33,7 @@ using tidy selectors, will calculate the mean
   bloodpress_mean(dt, dplyr::contains("Diastolic"))
   bloodpress_mean(dt, dplyr::contains("Systolic"))
 }
+\seealso{
+Other blood pressure functions: \code{\link{bloodpress_map}}
+}
+\concept{blood pressure functions}

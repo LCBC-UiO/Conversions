@@ -13,6 +13,7 @@
 #'
 #' @return numeric vector with mean
 #' @export
+#' @family blood pressure functions
 #' @importFrom dplyr mutate select
 #' @examples
 #'   dt <- data.frame(
@@ -42,7 +43,7 @@ bloodpress_mean <- function(data, cols, na.rm = TRUE){
 #'
 #' @return numeric vector of mean arterial pressure
 #' @export
-#'
+#' @family blood pressure functions
 #' @examples
 #' bloodpress_map(69, 40)
 bloodpress_map <- function(diastolic, systolic){

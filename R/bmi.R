@@ -10,10 +10,10 @@
 #'
 #' @return numeric vector of BMI
 #' @export
-#'
+#' @family bmi functions
 #' @examples
-#' calc_bmi(176, 72)
-calc_bmi <- function(height, weight){
+#' bmi_calc(176, 72)
+bmi_calc <- function(height, weight){
   weight/((height/100)^2)
 }
 
@@ -23,13 +23,13 @@ calc_bmi <- function(height, weight){
 #' weight / (height/100)^(2.5) } which is suggested to provide a measurement that
 #' it less dependent on height.
 #'
-#' @inheritParams calc_bmi
+#' @inheritParams bmi_calc
 #'
 #' @return numeric vector of BMI
 #' @export
-#'
+#' @family bmi functions
 #' @examples
-#' calc_bmi2(176, 72)
-calc_bmi2 <- function(height, weight){
+#' bmi_calc2(176, 72)
+bmi_calc2 <- function(height, weight){
   weight/((height/100)^2.5)
 }

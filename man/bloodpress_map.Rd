@@ -21,3 +21,7 @@ based on diastolic and systolic blood pressure.
 \examples{
 bloodpress_map(69, 40)
 }
+\seealso{
+Other blood pressure functions: \code{\link{bloodpress_mean}}
+}
+\concept{blood pressure functions}

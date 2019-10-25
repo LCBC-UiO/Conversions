@@ -1,12 +1,12 @@
-test_that("calc_bmi2 works", {
-  expect_equivalent(calc_bmi2(176, 72), 17.52067, tolerance = .0001)
+test_that("bmi_calc2 works", {
+  expect_equivalent(bmi_calc2(176, 72), 17.52067, tolerance = .0001)
   
   dt <- data.frame(height = c(172, 164, 192), 
                    weight = c(72, 45, 110))
   
   ret_dt <- mutate(dt, 
-         bmi = calc_bmi(height, weight),
-         bmi2 = calc_bmi2(height, weight))
+         bmi = bmi_calc(height, weight),
+         bmi2 = bmi_calc2(height, weight))
   
   expect_equal(ret_dt$bmi,
                c(24.3374797187669, 16.7311124330756, 29.8394097222222))
