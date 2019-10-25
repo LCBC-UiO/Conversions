@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculate mean arterial pressure — bloodpress_map • Conversions</title>
+<title>Calculate full scale IQ from WPPSI
+verbal and performance IQ — iq_wppsi_fs • Conversions</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -42,10 +43,10 @@
 
 
 
-<meta property="og:title" content="Calculate mean arterial pressure — bloodpress_map" />
-<meta property="og:description" content="Calculates the mean arterial pressure
-based on diastolic and systolic blood pressure.
-\(MAP = (diastolic * 2)  + systolic / 3 \)" />
+<meta property="og:title" content="Calculate full scale IQ from WPPSI
+verbal and performance IQ — iq_wppsi_fs" />
+<meta property="og:description" content="Calculate full scale IQ from WPPSI
+verbal and performance IQ" />
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
 
@@ -133,48 +134,44 @@ based on diastolic and systolic blood pressure.
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Calculate mean arterial pressure</h1>
-    <small class="dont-index">Source: <a href='https://github.com/LCBC-UiO/Conversions/blob/master/R/bloodpress.R'><code>R/bloodpress.R</code></a></small>
-    <div class="hidden name"><code>bloodpress_map.Rd</code></div>
+    <h1>Calculate full scale IQ from WPPSI
+verbal and performance IQ</h1>
+    <small class="dont-index">Source: <a href='https://github.com/LCBC-UiO/Conversions/blob/master/R/iq_functions.R'><code>R/iq_functions.R</code></a></small>
+    <div class="hidden name"><code>iq_wppsi_fs.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Calculates the mean arterial pressure
-based on diastolic and systolic blood pressure.
-\(MAP = (diastolic * 2)  + systolic / 3 \)</p>
+    <p>Calculate full scale IQ from WPPSI
+verbal and performance IQ</p>
     </div>
 
-    <pre class="usage"><span class='fu'>bloodpress_map</span>(<span class='no'>diastolic</span>, <span class='no'>systolic</span>)</pre>
+    <pre class="usage"><span class='fu'>iq_wppsi_fs</span>(<span class='no'>verbal_iq</span>, <span class='no'>performance_iq</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>diastolic</th>
-      <td><p>diastolic blood pressure</p></td>
+      <th>verbal_iq</th>
+      <td><p>unscaled verbal IQ</p></td>
     </tr>
     <tr>
-      <th>systolic</th>
-      <td><p>systolic blood pressure</p></td>
+      <th>performance_iq</th>
+      <td><p>unscaled performance IQ</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>numeric vector of mean arterial pressure</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p>Other blood pressure functions: <code><a href='bloodpress_mean.html'>bloodpress_mean</a></code></p></div>
+    <p>vector of full scale iq</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>bloodpress_map</span>(<span class='fl'>69</span>, <span class='fl'>40</span>)</div><div class='output co'>#&gt; [1] 59.33333</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>iq_wppsi_fs</span>(<span class='fl'>89</span>, <span class='fl'>96</span>)</div><div class='output co'>#&gt; [1] 92.5</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
