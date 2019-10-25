@@ -17,6 +17,7 @@ numeric vector of mean arterial pressure
 \description{
 Calculates the mean arterial pressure
 based on diastolic and systolic blood pressure.
+\eqn{MAP = (diastolic * 2)  + systolic / 3 }
 }
 \examples{
 bloodpress_map(69, 40)

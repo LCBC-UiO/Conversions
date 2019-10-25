@@ -36,6 +36,7 @@ bloodpress_mean <- function(data, cols, na.rm = TRUE){
 #' 
 #' Calculates the mean arterial pressure
 #' based on diastolic and systolic blood pressure.
+#' \eqn{MAP = (diastolic * 2)  + systolic / 3 } 
 #' 
 #'
 #' @param diastolic diastolic blood pressure
