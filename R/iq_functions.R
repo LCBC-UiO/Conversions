@@ -72,7 +72,8 @@ iq_wppsi_fs <- function(verbal_iq, performance_iq){
 #' @importFrom magrittr '%>%'
 #' @examples
 #' \dontrun{
-#' iq_table("tables/wasi_table.tsv", "vocabulary")
+#' conversion_table <- iq_table("tests/testthat/iq_table_subtest.tsv", header=TRUE)
+#' iq_table(conversion_table, "vocabulary")
 #' }
 iq_table <- function(table = NULL, subtest = NULL, ...){
   stopifnot(!is.null(table))
@@ -132,7 +133,7 @@ iq_get <- function(x, age, iq_table){
 #' @param data data.frame 
 #' @param cols columns in the data frame with necessary
 #' data
-#' @param conversion_table table with conversion, first column
+#' @param iq_table table with conversion, first column
 #' being the score to convert from, second score to 
 #' convert to
 #'
@@ -145,25 +146,23 @@ iq_get <- function(x, age, iq_table){
 #' } 
 iq_t2iq <- function(data, 
                     cols = NULL, 
-                    conversion_table = NULL){
+                    iq_table = NULL){
   
-  if(is.null(conversion_table)){
-    stop("Need 'conversion_table'", call.=FALSE)
-  }else if(is.character(conversion_table)){
-    conversion_table = rio::import_list(file)
+  if(is.null(iq_table)){
+    stop("Need 'iq_table'", call.=FALSE)
   }
   
   tmp <- select(data, {{cols}})
   tmp <- rowSums(tmp, na.rm = FALSE)
   
-  convert_t2iq(tmp, conversion_table)
+  convert_t2iq(tmp, iq_table)
 }
 
 
-convert_t2iq = function(x, conversion_table) {
+convert_t2iq = function(x, iq_table) {
   
   # set t-values outside allowed range to 999
-  x = ifelse(x < min(conversion_table[,1]) | x > max(conversion_table[,1]), 
+  x = ifelse(x < min(iq_table[,1]) | x > max(iq_table[,1]), 
              999, x) 
   
   if(any(x == 999)){
@@ -172,7 +171,7 @@ convert_t2iq = function(x, conversion_table) {
   }
   
   # Get the values from the wasi table at the extracted indeces
-  conversion_table[match(x, conversion_table[,1]),2]
+  iq_table[match(x, iq_table[,1]),2]
 }
 
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("raw_score", "score", "DEC",

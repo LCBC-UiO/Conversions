@@ -4,7 +4,7 @@
 \alias{iq_t2iq}
 \title{Convert T-score to IQ}
 \usage{
-iq_t2iq(data, cols = NULL, conversion_table = NULL)
+iq_t2iq(data, cols = NULL, iq_table = NULL)
 }
 \arguments{
 \item{data}{data.frame}
@@ -12,7 +12,9 @@ iq_t2iq(data, cols = NULL, conversion_table = NULL)
 \item{cols}{columns in the data frame with necessary
 data}
 
-\item{conversion_table}{table with conversion}
+\item{iq_table}{table with conversion, first column
+being the score to convert from, second score to 
+convert to}
 }
 \value{
 numeric vector of IQ scores

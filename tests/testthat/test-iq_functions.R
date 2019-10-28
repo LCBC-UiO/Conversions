@@ -63,7 +63,26 @@ test_that("iq_wppsi_fs works", {
 })
 
 test_that("iq_t2iq works", {
-  expect_error(iq_t2iq(), "conversion_table")
+  expect_error(iq_t2iq(), "iq_table")
+  
+  dt <- data.frame(
+    s1 = c(10,14,18),
+    s2 = c(12, 11, 20),
+    t1 = c(35, 42, 32),
+    t2 = c(33, 40, 36)
+  )
+  
+  t <- data.frame(
+    raw = 60:85,
+    converted = 90:115
+  )
+  
+  expect_warning(iq_t2iq(dt, dplyr::starts_with("s"), t),
+                 "outside the allowed range")
+  
+  expect_equal(iq_t2iq(dt, dplyr::starts_with("t"), t),
+                 c(98L, 112L, 98L))
+  
 })
 
 

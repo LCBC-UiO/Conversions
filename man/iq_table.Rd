@@ -23,7 +23,8 @@ scores to norm or T-scores
 }
 \examples{
 \dontrun{
-iq_table("tables/wasi_table.tsv", "vocabulary")
+conversion_table <- iq_table("tests/testthat/iq_table_subtest.tsv", header=TRUE)
+iq_table(conversion_table, "vocabulary")
 }
 }
 \seealso{
