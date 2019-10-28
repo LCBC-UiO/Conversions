@@ -166,7 +166,7 @@ function, using the two unscaled verbal and
 performance IQs.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>iq_t2iq</span>(<span class='no'>data</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>conversion_table</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>iq_t2iq</span>(<span class='no'>data</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>iq_table</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -181,8 +181,10 @@ performance IQs.</p>
 data</p></td>
     </tr>
     <tr>
-      <th>conversion_table</th>
-      <td><p>table with conversion</p></td>
+      <th>iq_table</th>
+      <td><p>table with conversion, first column
+being the score to convert from, second score to 
+convert to</p></td>
     </tr>
     </table>
 
