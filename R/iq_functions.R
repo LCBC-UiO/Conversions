@@ -86,11 +86,18 @@ iq_table <- function(table = NULL, subtest = NULL, ...){
   # Make sure subtest matches possible subtests
   # also does partial matching as long as unique
   subtest <- match.arg(subtest, unique(table$Subtest))
+
+  if(!is.null(subtest)){
+    # Calculate Age in decimals from Age with month
+    suppressWarnings(
+      table <- table %>% 
+        dplyr::filter(Subtest %in% subtest)
+    )
+  }
   
   # Calculate Age in decimals from Age with month
   suppressWarnings(
     table %>% 
-      dplyr::filter(Subtest %in% subtest) %>% 
       tidyr::separate(Age, c("Age", "DEC"), sep=":", convert=T) %>% 
       dplyr::mutate(DEC = DEC/12, 
                     Age = ifelse(is.na(DEC), Age, Age + DEC)) %>% 
