@@ -17,7 +17,9 @@
 #' iq_raw2score(x = c(33, 34, NA, 34), age=c(15.5, 20, 20, NA))
 #' }
 iq_raw2score <- function(x, age, iq_table){
-  purrr::map2_dbl(x, age, ~ iq_get(.x, .y, iq_table))
+  suppressWarnings(
+    purrr::map2_dbl(x, age, ~ iq_get(.x, .y, iq_table))
+  )
 }
 
 #' Adjust WPPSI components to two subtest
@@ -67,9 +69,10 @@ iq_wppsi_fs <- function(verbal_iq, performance_iq){
 #' @return long tibble of the wanted conversion table
 #' @export
 #' @family iq-functions
-#' @importFrom dplyr mutate select filter as_tibble
-#' @importFrom tidyr gather separate
+#' @importFrom dplyr mutate select filter as_tibble group_by ungroup arrange summarise
+#' @importFrom tidyr gather separate unnest
 #' @importFrom magrittr '%>%'
+#' @importFrom rio import
 #' @examples
 #' \dontrun{
 #' conversion_table <- iq_table("tests/testthat/iq_table_subtest.tsv", header=TRUE)
@@ -105,8 +108,29 @@ iq_table <- function(table = NULL, subtest = NULL, ...){
       tidyr::gather(score, raw_score, -1:-2) %>% 
       dplyr::mutate(score = as.numeric(score)) %>% 
       dplyr::filter(!is.na(raw_score), !is.na(score)) %>% 
-      dplyr::as_tibble()
-  )
+      dplyr::as_tibble() %>% 
+      dplyr::arrange(Age) %>% 
+      
+      # super convoluted way to expand it so that
+      # when there are missing values in raw
+      # the table fills that in, as is in the
+      # original tables.
+      # we only punched minimum numbers
+      dplyr::mutate(
+        j = lag(raw_score+1),
+        q = ifelse(j == raw_score, NA, raw_score-1),
+        to = lead(q),
+        to = ifelse(is.na(to), raw_score, to)
+      ) %>% 
+      dplyr::group_by(Age, Subtest, score) %>% 
+      dplyr::summarise(c = paste0(raw_score, ":", to)) %>% 
+      dplyr::mutate(
+        k = lapply(c, function(x) data.frame(raw_score = unlist(eval(parse(text = x))))),
+      ) %>% 
+      tidyr::unnest(k) %>% 
+      dplyr::ungroup() %>% 
+      dplyr::select(-c)
+  ) 
 }
 
 iq_get <- function(x, age, iq_table){
@@ -172,8 +196,8 @@ convert_t2iq = function(x, iq_table) {
   x = ifelse(x < min(iq_table[,1]) | x > max(iq_table[,1]), 
              999, x) 
   
-  if(any(x == 999)){
-    rr <- paste(which(x == 999), collapse=", ")
+  if(any(x %in% 999)){
+    rr <- paste(which(x %in% 999), collapse=", ")
     warning(paste0("Some values are outside the allowed range. Row number(s):\t", rr))
   }
   

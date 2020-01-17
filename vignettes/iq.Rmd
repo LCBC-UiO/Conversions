@@ -1,5 +1,6 @@
 ---
 title: "IQ - converting subtests raw scores"
+subtitle: "outdated information - update coming"
 author: "Athanasia Monika Mowinckel & Didac Vidal-Piñeiro"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -15,8 +16,6 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
-
-**NOTE** This description is outdated, update is awaited soon. 
 
 This script converts t-scores from WASI-I to Fullscale IQ (FSIQ). The table is proprietary and may not be distributed outside of LCBC.
 It requires both tidyverse and readxl packages to run. Given an array of t-scores, it will provide an array of equal size back with IQ scores.

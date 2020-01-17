@@ -1,10 +1,10 @@
 iq_file <- paste0(test_path(),"/iq_table_subtest.tsv")
-t <- iq_table(iq_file, "Vocab", header=TRUE)
 
 test_that("iq_table works", {
+  t <- iq_table(iq_file, "Vocab", header=TRUE)
   
   expect_length(t, 4)
-  expect_equal(nrow(t), 66)
+  expect_equal(nrow(t), 119)
   expect_equal(names(t), c("Age", "Subtest", "score", "raw_score"))
   expect_equal(unique(t$Subtest), "Vocabulary")
   
@@ -15,12 +15,12 @@ test_that("iq_table works", {
   
   expect_error(iq_table(iq_file, "q", header=TRUE), 
                "should be one of")
+  
 })
 
+t <- iq_table(iq_file, "Vocab", header=TRUE)
+
 test_that("iq_get works",{
-  
-  t <- iq_table(iq_file, "Vocab", header=TRUE)
-  
   expect_equal(iq_get(33, 15.5, t), 31)
   expect_equal(iq_get(33, 20, t), NA_integer_)
   expect_equal(iq_get(34, 20, t), 27)
@@ -34,8 +34,6 @@ test_that("iq_convert works", {
     wasi_vocab = c(33, 34, NA, 34),
     age = c(15.5, 20, 20, NA)
   )
-  
-  t <- iq_table(iq_file, "Vocab", header=TRUE)
   
   expect_equal(iq_raw2score(dt$wasi_vocab[1], dt$age[1], t), 31)
   expect_equal(iq_raw2score(dt$wasi_vocab, dt$age, t), c(31, 27, NA, NA))

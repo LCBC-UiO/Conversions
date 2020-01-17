@@ -9,8 +9,6 @@
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
 status](https://travis-ci.org/LCBC-UiO/Conversions.svg?branch=master)](https://travis-ci.org/LCBC-UiO/Conversions)
-[![CircleCI build
-status](https://circleci.com/gh/LCBC-UiO/Conversions.svg?style=svg)](https://circleci.com/gh/LCBC-UiO/Conversions)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/Conversions?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/Conversions)
 [![Codecov test
@@ -24,10 +22,12 @@ in the database of LCBC.
 
 The conversions covered so far:
 
-  - IQ measures - conversions from raw to T, scaled and fullscale IQ
-    scores  
-  - MAP mean - blood pressure conversion  
-  - BMI - Body mass index calculation
+  - iq-functions - [conversions from raw to T, scaled and fullscale IQ
+    scores (outdated
+    documentation)](https://lcbc-uio.github.io/Conversions/iq.html)  
+  - bloodpress-functions - [blood pressure
+    conversions](https://lcbc-uio.github.io/Conversions/bloodpress.html)  
+  - bmi-functions - Body mass index calculation \[no documentation yet\]
 
 Thee functions are not properly cleaned and optimised yet. They are
 remnants of old scripts. There are no unit tests.
