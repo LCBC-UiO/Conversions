@@ -14,7 +14,7 @@
 #' @examples
 #' bmi_calc(176, 72)
 bmi_calc <- function(height, weight){
-  weight/((height/100)^2)
+  weight/(height/100)^2
 }
 
 #' Calculate BMI
@@ -31,5 +31,5 @@ bmi_calc <- function(height, weight){
 #' @examples
 #' bmi_calc2(176, 72)
 bmi_calc2 <- function(height, weight){
-  weight/((height/100)^2.5)
+  weight/(height/100)^2.5
 }
