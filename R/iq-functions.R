@@ -71,6 +71,7 @@ iq_wppsi_fs <- function(verbal_iq, performance_iq){
 #' @family iq-functions
 #' @importFrom dplyr mutate select filter as_tibble group_by ungroup arrange summarise
 #' @importFrom tidyr gather separate unnest
+#' @importFrom dplyr lead lag
 #' @importFrom magrittr '%>%'
 #' @importFrom rio import
 #' @examples
@@ -206,4 +207,5 @@ convert_t2iq = function(x, iq_table) {
 }
 
 if(getRversion() >= "2.15.1")  utils::globalVariables(c("raw_score", "score", "DEC",
-                                                        "Age", ".", "Subtest"))
+                                                        "Age", ".", "Subtest",
+                                                        "to", "k", "j"))

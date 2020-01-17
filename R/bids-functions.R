@@ -12,12 +12,13 @@
 #'
 #' @return character in BIDS compliant format
 #' @export
-#'
 #' @examples
 #' bidsify(1100300, 2)
 #' bidsify(1100300, 2, "ousAvanto")
 #' bidsify(1100300, 2, "ousAvanto", type = "folder")
 bidsify <- function(ID, session, site=NULL, type="file"){
+  
+  type <- match.arg(type, c("file", "folder"))
   
   seep <- switch(type,
                  file = "_",

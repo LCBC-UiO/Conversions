@@ -28,17 +28,8 @@ delay_days_calc <- function(data, test_date){
 }
 
 
-bids_spec <- function(CrossProject_ID, Subject_Timepoint, Site_Name){
-  ifelse(Site_Name != "noMRI", 
-         paste0("sub-",CrossProject_ID,"/ses-", 
-                str_pad(Subject_Timepoint, width = 2, side = "left", pad="0"), 
-                Site_Name),
-         NA)
-}
-
-
 ## quiets concerns of R CMD check
 if(getRversion() >= "2.15.1"){
-  utils::globalVariables(c("CVLT_A1", "CVLT_A_Total"))
+  utils::globalVariables(c("CVLT_A1", "CVLT_A_Total", "DelayedMem_Days","Test_Date"))
 }
 
