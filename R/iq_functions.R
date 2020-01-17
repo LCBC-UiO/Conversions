@@ -113,7 +113,7 @@ iq_get <- function(x, age, iq_table){
   
   tmp <- filter(iq_table, 
                 raw_score == x,
-                Age == min(iq_table$Age[iq_table$Age>=age])
+                Age == max(iq_table$Age[iq_table$Age<=age])
   )
   
   ifelse(nrow(tmp)>0,tmp$score, NA_integer_)
