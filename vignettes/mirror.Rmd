@@ -1,5 +1,5 @@
 ---
-title: "mirror"
+title: "Mirror Tracing Task"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{mirror}
@@ -12,5 +12,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-devtools::load:all(".")
+devtools::load_all(".")
 ```
+
+I might move this to its own repository with other computerised-like tasks. 
+Document it anyway. I'll port it if I do so.

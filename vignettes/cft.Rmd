@@ -1,5 +1,5 @@
 ---
-title: "cft"
+title: "Complex Figure Task (CFT)"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{cft}
@@ -12,5 +12,5 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-devtools::load:all(".")
+devtools::load_all(".")
 ```

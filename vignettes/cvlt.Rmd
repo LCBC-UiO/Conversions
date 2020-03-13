@@ -1,5 +1,5 @@
 ---
-title: "cvlt"
+title: "California Verbal Learning Task (CVLT)"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{cvlt}
@@ -12,5 +12,5 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-devtools::load:all(".")
+devtools::load_all(".")
 ```

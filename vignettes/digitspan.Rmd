@@ -1,5 +1,5 @@
 ---
-title: "digitspan"
+title: "Digit span"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{digitspan}
@@ -12,5 +12,5 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-devtools::load:all(".")
+devtools::load_all(".")
 ```
