@@ -14,7 +14,3 @@ knitr::opts_chunk$set(
 )
 devtools::load:all(".")
 ```
-
-```{r setup}
-library(Conversions)
-```
