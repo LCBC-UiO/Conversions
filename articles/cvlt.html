@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Intelligence quotients • Conversions</title>
+<title>California Verbal Learning Task (CVLT) • Conversions</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
@@ -16,7 +16,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="Intelligence quotients">
+<script src="../pkgdown.js"></script><meta property="og:title" content="California Verbal Learning Task (CVLT)">
 <meta property="og:description" content="">
 <meta property="og:image" content="/logo.png">
 <meta name="twitter:card" content="summary">
@@ -113,101 +113,21 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>Intelligence quotients</h1>
-            <h3 class="subtitle">converting subtests raw scores</h3>
+      <h1>California Verbal Learning Task (CVLT)</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/LCBC-UiO/Conversions/blob/master/vignettes/iq.Rmd"><code>vignettes/iq.Rmd</code></a></small>
-      <div class="hidden name"><code>iq.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/LCBC-UiO/Conversions/blob/master/vignettes/cvlt.Rmd"><code>vignettes/cvlt.Rmd</code></a></small>
+      <div class="hidden name"><code>cvlt.Rmd</code></div>
 
     </div>
 
     
     
-<div id="background" class="section level2">
-<h2 class="hasAnchor">
-<a href="#background" class="anchor"></a>Background</h2>
-</div>
-<div id="wasi-vs-wppsi" class="section level2">
-<h2 class="hasAnchor">
-<a href="#wasi-vs-wppsi" class="anchor"></a>WASI vs. WPPSI</h2>
-</div>
-<div id="subtests" class="section level2">
-<h2 class="hasAnchor">
-<a href="#subtests" class="anchor"></a>Subtests</h2>
-<div id="verbal-subtests" class="section level3">
-<h3 class="hasAnchor">
-<a href="#verbal-subtests" class="anchor"></a>Verbal subtests</h3>
-<div id="vocabulary" class="section level4">
-<h4 class="hasAnchor">
-<a href="#vocabulary" class="anchor"></a>Vocabulary</h4>
-</div>
-<div id="similarities" class="section level4">
-<h4 class="hasAnchor">
-<a href="#similarities" class="anchor"></a>Similarities</h4>
-</div>
-</div>
-<div id="performance-subtests" class="section level3">
-<h3 class="hasAnchor">
-<a href="#performance-subtests" class="anchor"></a>Performance subtests</h3>
-<div id="matrices" class="section level4">
-<h4 class="hasAnchor">
-<a href="#matrices" class="anchor"></a>Matrices</h4>
-</div>
-<div id="block" class="section level4">
-<h4 class="hasAnchor">
-<a href="#block" class="anchor"></a>Block</h4>
-</div>
-</div>
-</div>
-<div id="intelligence-scores" class="section level2">
-<h2 class="hasAnchor">
-<a href="#intelligence-scores" class="anchor"></a>Intelligence scores</h2>
-<div id="t-scores-vs-scaled-scores" class="section level3">
-<h3 class="hasAnchor">
-<a href="#t-scores-vs-scaled-scores" class="anchor"></a>T-scores vs. Scaled scores</h3>
-</div>
-<div id="verbal-and-performance-scores" class="section level3">
-<h3 class="hasAnchor">
-<a href="#verbal-and-performance-scores" class="anchor"></a>Verbal and Performance scores</h3>
-</div>
-<div id="full-scale-iq" class="section level3">
-<h3 class="hasAnchor">
-<a href="#full-scale-iq" class="anchor"></a>Full scale IQ</h3>
-</div>
-</div>
-<div id="conversion-tables" class="section level2">
-<h2 class="hasAnchor">
-<a href="#conversion-tables" class="anchor"></a>Conversion tables</h2>
-<p>All IQ tests are under proprietary licences, and so are the conversion tables used to convert raw in to T or scaled scores. These tables cannot be publicly shared in any way. At LCBC, we have taken the time to punch the conversion tables and store them locally and secure on our servers. To be able to use the functions in this package, you will need such a table, and we cannot provide you with it unless you work for us.</p>
-<p>The tables we have are punched <em>as is</em> in the tables that accompany the test materials. First column is the name of the <code>Subtest</code> (all subtests should be in the same table), then comes <code>Age</code> (as in the book, for children as in the book <code>7:3</code> meaning 7 years and 3 months). The remaining column names should be the <code>Score</code> (as in the table), and the cell contents the raw scores. For ranges, only add in the lowest number, the functions in this package will fill out the range when numbers are omitted.</p>
-</div>
-<div id="using-the-iq-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#using-the-iq-functions" class="anchor"></a>Using the <code>iq</code> functions</h2>
-<p>The <code>iq</code> functions are quite complex to use, as there is quite a lot og logistics that need to work for them scores to be derived from the raw data. Firstly, since both T and Scaled scored require age for conversion, this has to be available, for every raw subtest score, there must be an accompanying age to do the conversion. Secondly, to be able to do the conversion, a conversion table must be supplied, and must have the specifications described in the <em>Conversion tables</em> sections Once you have converted raw to T or Scaled scores, they can be combined, and then they must be converted again using other tables (in the standard Conversion tables format). At minimum two separate tables are needed to go from raw to full-scale IQ.</p>
-</div>
-<div id="references" class="section level2">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
-</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
 
-        <div id="tocnav">
-      <h2 class="hasAnchor">
-<a href="#tocnav" class="anchor"></a>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-<li><a href="#background">Background</a></li>
-      <li><a href="#wasi-vs-wppsi">WASI vs. WPPSI</a></li>
-      <li><a href="#subtests">Subtests</a></li>
-      <li><a href="#intelligence-scores">Intelligence scores</a></li>
-      <li><a href="#conversion-tables">Conversion tables</a></li>
-      <li><a href="#using-the-iq-functions">Using the <code>iq</code> functions</a></li>
-      <li><a href="#references">References</a></li>
-      </ul>
-</div>
       </div>
 
 </div>

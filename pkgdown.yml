@@ -3,5 +3,12 @@ pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
   bloodpress: bloodpress.html
+  cft: cft.html
+  cvlt: cvlt.html
+  digitspan: digitspan.html
+  hvlt: hvlt.html
   iq: iq.html
+  mirror: mirror.html
+  spatialspan: spatialspan.html
+  stroop: stroop.html
 
