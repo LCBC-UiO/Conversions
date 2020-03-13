@@ -1,8 +1,6 @@
 ---
-title: "IQ - converting subtests raw scores"
-subtitle: "outdated information - update coming"
-author: "Athanasia Monika Mowinckel & Didac Vidal-Piñeiro"
-date: "`r Sys.Date()`"
+title: "Intelligence quotients"
+subtitle: "converting subtests raw scores"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Convert WASI t-scores to IQ scores}
@@ -17,35 +15,43 @@ knitr::opts_chunk$set(
 )
 ```
 
-This script converts t-scores from WASI-I to Fullscale IQ (FSIQ). The table is proprietary and may not be distributed outside of LCBC.
-It requires both tidyverse and readxl packages to run. Given an array of t-scores, it will provide an array of equal size back with IQ scores.
-You must select the type of FS IQ to calculate, either with 2 or 4 subtests (default set to 2).
-
-## Input:
-
-**IN  =  array of T-scores data**
-sums of t-scores you want to use for the conversion. For two subtests, the sum of two t-scores, sums of four for four subtests.
+## Background
 
 
-**Table = conversion table**
+## WASI vs. WPPSI
 
-| Sheet Name | IQ Equivalents of Sums of T scores | Page reference|WASI manual year |
-|:----|----|----|----:|
-| WASI.Full.2tests | Full Scale - 2 subtests | 192-193 | 1999 |
-| WASI.Full.4tests | Full Scale - 4 subtests | 188-19 | 1999 |
+## Subtests
+### Verbal subtests
+#### Vocabulary
+#### Similarities
 
-## Output: 
-array with converted IQ scores. Wrong data is denoted with a "-1"
+### Performance subtests
+#### Matrices
+#### Block
 
+## Intelligence scores
+### T-scores vs. Scaled scores
+### Verbal and Performance scores
+### Full scale IQ
 
+## Conversion tables
+All IQ tests are under proprietary licences, and so are the conversion tables used to convert raw in to T or scaled scores.
+These tables cannot be publicly shared in any way.
+At LCBC, we have taken the time to punch the conversion tables and store them locally and secure on our servers.
+To be able to use the functions in this package, you will need such a table, and we cannot provide you with it unless you work for us. 
 
-## Invoking function 
-input here your T-scores arrays and your desired conversion table##
+The tables we have are punched _as is_ in the tables that accompany the test materials.
+First column is the name of the `Subtest` (all subtests should be in the same table), 
+then comes `Age` (as in the book, for children as in the book `7:3` meaning 7 years and 3 months). 
+The remaining column names should be the `Score` (as in the table), and the cell contents the raw scores.
+For ranges, only add in the lowest number, the functions in this package will fill out the range when numbers are omitted.
 
-```{r warning=F, message=F, eval=F}
-source("IQ_conversion.R")                 # Makes the function wasi.conversion() available
-Tscores = c(35,100,82,130, 180, 111)      # array with t-scores
-tb <- 4                                   # 2 or 4
+## Using the `iq` functions
 
-wasi.conversion(IN=Tscores, nSubtests=tb)
-```
+The `iq` functions are quite complex to use, as there is quite a lot og logistics that need to work for them scores to be derived from the raw data.
+Firstly, since both T and Scaled scored require age for conversion, this has to be available, for every raw subtest score, there must be an accompanying age to do the conversion.
+Secondly, to be able to do the conversion, a conversion table must be supplied, and must have the specifications described in the *Conversion tables* sections
+Once you have converted raw to T or Scaled scores, they can be combined, and then they must be converted again using other tables (in the standard Conversion tables format). 
+At minimum two separate tables are needed to go from raw to full-scale IQ. 
+
+## References
