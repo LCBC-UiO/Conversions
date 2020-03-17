@@ -34,6 +34,7 @@ using tidy selectors, will calculate the mean
   bloodpress_mean(dt, dplyr::contains("Systolic"))
 }
 \seealso{
-Other blood pressure functions: \code{\link{bloodpress_map}}
+Other blood pressure functions: 
+\code{\link{bloodpress_map}()}
 }
 \concept{blood pressure functions}

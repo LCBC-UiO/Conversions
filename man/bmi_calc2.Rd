@@ -4,12 +4,14 @@
 \alias{bmi_calc2}
 \title{Calculate BMI}
 \usage{
-bmi_calc2(height, weight)
+bmi_calc2(height, weight, unit = list(height = "cm", weight = "kg"))
 }
 \arguments{
-\item{height}{height in centimeters}
+\item{height}{height}
 
-\item{weight}{weight in kilograms}
+\item{weight}{weight}
+
+\item{unit}{list of weight and heigt with units for the measures}
 }
 \value{
 numeric vector of BMI
@@ -23,6 +25,7 @@ it less dependent on height.
 bmi_calc2(176, 72)
 }
 \seealso{
-Other bmi functions: \code{\link{bmi_calc}}
+Other bmi functions: 
+\code{\link{bmi_calc}()}
 }
 \concept{bmi functions}

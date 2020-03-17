@@ -28,6 +28,7 @@ iq_table(conversion_table, "vocabulary")
 }
 }
 \seealso{
-Other iq-functions: \code{\link{iq_raw2score}}
+Other iq-functions: 
+\code{\link{iq_raw2score}()}
 }
 \concept{iq-functions}

@@ -28,6 +28,7 @@ iq_raw2score(x = c(33, 34, NA, 34), age=c(15.5, 20, 20, NA))
 }
 }
 \seealso{
-Other iq-functions: \code{\link{iq_table}}
+Other iq-functions: 
+\code{\link{iq_table}()}
 }
 \concept{iq-functions}
