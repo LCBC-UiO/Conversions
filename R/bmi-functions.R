@@ -5,8 +5,9 @@
 #' with the standard formulae: 
 #' \eqn{BMI = weight / (height/100)^2 }
 #' 
-#' @param height height in centimeters
-#' @param weight weight in kilograms
+#' @param height height 
+#' @param weight weight 
+#' @param unit list of weight and heigt with units for the measures
 #'
 #' @return numeric vector of BMI
 #' @export
