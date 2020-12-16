@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-devtools::load_all(".")
+options(rmarkdown.html_vignette.check_title = FALSE)
+library(Conversions)
 ```
 
 We might consider merging this with CVLT, having subheadings for the two different types of verbal learning task we have.
