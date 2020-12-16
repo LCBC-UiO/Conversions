@@ -11,3 +11,4 @@
 ^\.circleci/config\.yml$
 ^appveyor\.yml$
 ^Conversions\.Rproj$
+^\.github$

@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
   [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/Conversions?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/Conversions)
   [![Codecov test coverage](https://codecov.io/gh/LCBC-UiO/Conversions/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/Conversions?branch=master)
   [![CRAN status](https://www.r-pkg.org/badges/version/Conversions)](https://CRAN.R-project.org/package=Conversions)
+[![R build status](https://github.com/LCBC-UiO/Conversions/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/Conversions/actions)
 <!-- badges: end -->
 
 The repository contains functions to run coversions on certain raw data in the database of LCBC.
